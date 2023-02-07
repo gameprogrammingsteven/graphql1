@@ -7,7 +7,7 @@ export const resolvers = {
             return Job.findById(id)
         },
         company: (_root, { id }) => {
-            return Company.findById(job.companyId)
+            return Company.findById(id)
         }
     },
     Job: {
