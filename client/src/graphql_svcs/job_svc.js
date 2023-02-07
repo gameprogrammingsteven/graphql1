@@ -3,7 +3,7 @@ import { request, gql } from 'graphql-request';
 const GRAPHQL_SERVER = 'http://localhost:9000/graphql';
 
 export async function getJobs() {
-    const query = gql`
+  const query = gql`
     query {
         jobs {
           id 
@@ -15,6 +15,7 @@ export async function getJobs() {
         }
       }
     `;
-    const data = await request(GRAPHQL_SERVER, query);
-    console.log(data)
+  const data = await request(GRAPHQL_SERVER, query);
+
+  return data.jobs
 }
