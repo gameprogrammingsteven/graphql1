@@ -3,9 +3,11 @@ import { Job, Company } from "../db.js";
 export const resolvers = {
     Query: {
         jobs: () => Job.findAll(),
-        job: (root, argDictionary) => {
-            const { id } = argDictionary; //can shortcut in argument
+        job: (_root, { id }) => {
             return Job.findById(id)
+        },
+        company: (_root, { id }) => {
+            return Company.findById(job.companyId)
         }
     },
     Job: {
