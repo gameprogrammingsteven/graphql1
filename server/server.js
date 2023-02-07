@@ -41,4 +41,5 @@ apolloServer.applyMiddleware({ app, path: '/graphql' }) //default loc
 
 app.listen({ port: PORT }, () => {
     console.log(`Server running on port ${PORT}`);
+    console.log(`GraphQL running at http://localhost:${PORT}/graphql`);
 });
