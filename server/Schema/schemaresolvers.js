@@ -6,11 +6,14 @@ export const resolvers = {
         job: (_root, { id }) => {
             return Job.findById(id)
         },
-        company: (_root, { id }) => {
-            return Company.findById(id)
-        }
+        company: (_root, { id }) => Company.findById(id)
     },
     Job: {
         company: (job) => Company.findById(job.companyId)
+    },
+    Mutation: {
+        createJob: (_root, { input }) => {
+            return Job.create(input); //non-destructure, pay attention.
+        }
     }
 };
